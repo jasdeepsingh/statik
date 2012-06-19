@@ -1,20 +1,18 @@
 Statik::Application.routes.draw do
-  root              to: 'static_pages#home'
+  root              to: "static_pages#home"
+  devise_for        :users
+  resources         :users, :only => [:show, :index]
+  devise_for        :user, :path => '', :path_names => { :sign_in => "login", :sign_out => "logout", :sign_up => "register" }
+  match 'register', to: 'devise/registrations#new', as: :new_user_registration
+  
+  authenticated :user do
+    root            to: 'static_pages#home'
+  end
 
   match '/help',    to: 'static_pages#help'
-  
   match '/about',   to: 'static_pages#about'
-  
   match '/contact', to: 'static_pages#contact'
   
-  # get "static_pages/home"
-# 
-  # get "static_pages/about"
-# 
-  # get "static_pages/help"
-# 
-  # get "static_pages/contact"
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -71,4 +69,7 @@ Statik::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
+  
+  # Route error handling
+  match '*path', :to => 'error#routing_error'
 end

@@ -3,6 +3,9 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.6'
 gem 'bootstrap-sass', '2.0.3.1'
 gem 'bcrypt-ruby', '3.0.1'
+gem 'devise', '2.1.0'
+gem 'cancan', '1.6.7'
+gem 'rolify', '3.1.0'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -51,6 +54,10 @@ group :test do
   gem 'guard-spork', '1.0.0'
   gem 'spork', '0.9.2'
   gem 'factory_girl_rails', '3.4.0'
+  gem 'email_spec', '1.2.1'
+  # gem 'cucumber-rails', '1.3.0'
+  gem 'database_cleaner', '0.8.0'
+  gem 'launchy', '2.1.0'
 end
 
 group :production do

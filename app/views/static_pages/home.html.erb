@@ -1,5 +1,7 @@
 <div class="center hero-unit">
-  <h1>WordIntel by 5Bytes</h1>
-  <p class="lead">Puts Intelligence in your communication.</p>
-  <%= link_to "Sign up now!", "#", class: "btn btn-large btn-primary" %>
+  <h1>BaseTop by @jsinghfoss</h1>
+  <p class="lead">Rails 3.2.6, Devise, Twitter Bootstrap, SASS</p>
+  <% if !user_signed_in? %>
+  	<%= link_to "Sign up now!", new_user_registration_path, class: "btn btn-large btn-primary" %>
+  <% end %> 
 </div>
