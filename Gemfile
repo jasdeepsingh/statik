@@ -6,6 +6,7 @@ gem 'bcrypt-ruby', '3.0.1'
 gem 'devise', '2.1.0'
 gem 'cancan', '1.6.7'
 gem 'rolify', '3.1.0'
+gem 'heroku'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
